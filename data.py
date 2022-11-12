@@ -1,8 +1,4 @@
-import html
 import requests
-from html.parser import HTMLParser
-
-h = html.parser
 
 parameters = {
     "amount": 10,
@@ -13,7 +9,7 @@ response = requests.get("https://opentdb.com/api.php", params=parameters)
 response.raise_for_status()
 
 data = response.json()
-data = data["results"]
+question_data = data["results"]
 
-question_data = [{"question": h.unescape(each["question"]), "correct_answer": each["correct_answer"]}
-                 for each in data]
+# question_data = [{"question": h.unescape(each["question"]), "correct_answer": each["correct_answer"]}
+#                  for each in data]
