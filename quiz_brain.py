@@ -3,6 +3,7 @@ import html
 
 class QuizBrain:
     def __init__(self, question_list):
+        self.current_question = None
         self.question_number = 0
         self.question_list = question_list
         self.score = 0
