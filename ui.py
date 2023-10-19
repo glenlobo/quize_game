@@ -46,7 +46,8 @@ class QuizInterface:
         if self.quiz.still_has_questions():
             q_text = self.quiz.next_question()
         else:
-            q_text = f"You have reached the end of the quiz\nYour final score is {self.quiz.score}"
+            q_text = f"You have reached the end of the quiz!\n\nYour final score is {self.quiz.score}/10."
+            self.score_label.destroy()
             self.true_button.config(state="disabled")
             self.false_button.config(state="disabled")
 
